@@ -1,0 +1,13 @@
+/home/ezroot/Dev/SocketTest/bin/Debug/netcoreapp3.1/SocketTest
+/home/ezroot/Dev/SocketTest/bin/Debug/netcoreapp3.1/SocketTest.deps.json
+/home/ezroot/Dev/SocketTest/bin/Debug/netcoreapp3.1/SocketTest.runtimeconfig.json
+/home/ezroot/Dev/SocketTest/bin/Debug/netcoreapp3.1/SocketTest.runtimeconfig.dev.json
+/home/ezroot/Dev/SocketTest/bin/Debug/netcoreapp3.1/SocketTest.dll
+/home/ezroot/Dev/SocketTest/bin/Debug/netcoreapp3.1/SocketTest.pdb
+/home/ezroot/Dev/SocketTest/obj/Debug/netcoreapp3.1/SocketTest.csprojAssemblyReference.cache
+/home/ezroot/Dev/SocketTest/obj/Debug/netcoreapp3.1/SocketTest.AssemblyInfoInputs.cache
+/home/ezroot/Dev/SocketTest/obj/Debug/netcoreapp3.1/SocketTest.AssemblyInfo.cs
+/home/ezroot/Dev/SocketTest/obj/Debug/netcoreapp3.1/SocketTest.csproj.CoreCompileInputs.cache
+/home/ezroot/Dev/SocketTest/obj/Debug/netcoreapp3.1/SocketTest.dll
+/home/ezroot/Dev/SocketTest/obj/Debug/netcoreapp3.1/SocketTest.pdb
+/home/ezroot/Dev/SocketTest/obj/Debug/netcoreapp3.1/SocketTest.genruntimeconfig.cache
