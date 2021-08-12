@@ -59,7 +59,7 @@ namespace SocketTest.Client
             Process proc = new System.Diagnostics.Process();
             proc.StartInfo.FileName = "/bin/bash";
             proc.StartInfo.Arguments = "-c \""+commands+"\"";
-            proc.StartInfo.CreateNoWindow = true;
+            //proc.StartInfo.CreateNoWindow = true;
             proc.StartInfo.RedirectStandardOutput = true;
             proc.Start();
             proc.WaitForExit();
